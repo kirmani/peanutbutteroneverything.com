@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Peanut Butter</title>
+    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+    <script language="Javascript" type="text/javascript">
+      google.load('search', '1');
+
+      function OnLoad() {
+        // Create a search control
+        var searchControl = new google.search.SearchControl();
+
+        // Add image searcher
+        var imageSearch = new google.search.ImageSearch();
+        searchControl.addSearcher(imageSearch);
+
+        // tell the search to draw itself and tell it where to attach
+        searchControl.draw(document.getElementById("searchcontrol"));
+
+        // execute an initial search
+        searchControl.execute("Peanut Butter");
+      }
+      google.setOnLoadCallback(OnLoad);
+
+      //]]>
+    </script>
+	</head>
+	<body>
+	  <div id="searchcontrol">Loading...</div>
+  </body>
+</html>
